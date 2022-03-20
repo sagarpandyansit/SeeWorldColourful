@@ -1,0 +1,51 @@
+{
+    "name": "See World Colourful",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Change website interface as per your need",
+    "icons": {
+        "128": "logo.png"
+    },
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo.png",
+        "default_title": "SeeWorldColourful"
+    },
+    "background": {
+        "scripts": ["eventPage.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.geeksforgeeks.org/*"],
+            "js": ["SimpleImage.js", "contentGFG.js", "jquery-3.6.0.js"],
+            "css": ["contentGFG.css"]
+        },
+        {
+	    "matches": ["https://practice.geeksforgeeks.org/*"],
+	    "js": ["contentPractGFG.js", "jquery-3.6.0.js"],
+	    "css": ["contentPractGFG.css"]
+	},
+        {
+            "matches": ["https://developer.chrome.com/*"],
+            "js": ["contentDevChrome.js", "jquery-3.6.0.js"],
+            "css": ["contentDevChrome.css"]
+        },
+        {
+            "matches": ["https://*/*"],
+            "js": ["contentAll.js", "jquery-3.6.0.js"],
+            "css": ["contentAll.css"]
+        }
+    ],
+    "permissions": [
+        "activeTab", 
+        "tabs", 
+        "storage",
+        "tts",
+        "contextMenus",
+        "https://www.geeksforgeeks.org/*",
+        "https://practice.geeksforgeeks.org/*",
+        "https://developer.chrome.com/*",
+        "https://*/*"
+    ]
+}

@@ -1,0 +1,17 @@
+a {
+    text-decoration: underline !important;
+    color: blue !important;
+}
+
+span.read-more {
+    text-decoration: underline;
+    text-decoration-color: darkblue !important;
+}
+
+div.ref {
+    color: blue !important;
+}
+
+.title {
+    color: blue !important;
+}
